@@ -1,0 +1,19 @@
+<h1><%=@book.title%></h1>
+
+<h3>Books are very versitle. They can have one central plot, or many different story lines. <br>
+No matter how many aspects a book may have, a lesson can be learned through each one. <br>
+Take a look at the story line(s) this book has in order to determine if can help you reach your personal goal.
+If it is a match, <br> <%=link_to "Add it to your bookshelf!", new_book_goal_path(@book) %></h3>
+
+<h2>Main Ideas:</h2>
+<%@book.plots.each do |p|%>
+    <li><%=p.description%></li>
+<%end%>
+
+<br>
+<%=link_to "Add book to bookshelf", new_book_goal_path(@book) %><br><br>
+
+
+<h5>adding a book to my book shelf should take me to the new goal page 
+with the name of the current book prepopulated
+i can render a new page that says the name of the book at the top then sends the new goal partial</h5>

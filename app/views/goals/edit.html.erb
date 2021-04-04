@@ -1,0 +1,12 @@
+
+<%=render(partial: "application/errors", locals: {errors: @goal.errors.full_messages})%>
+
+<h3>Edit <%=@goal.item.name%></h3>
+
+<%=form_for(@goal) do |f|%>
+    <%=f.label("Goal Description:") %>
+    <%=f.text_area(:description) %>
+    <%=f.label("Goal Completion Date:") %>
+    <%=f.text_field(:completion_date) %>
+    <%=f.submit "Submit"%>
+  <%end%>

@@ -1,0 +1,15 @@
+<%=form_with(model: @book, builder: CustomFormBuilder) do |f|%>
+    <%=f.label("book title:") %>
+    <%=f.text_field(:title) %>
+    <%=f.label("book author:") %>
+    <%=f.text_field(:author) %>
+    <%=f.label("goals:") %>
+    <%=f.my_fields_for(:goals, @goals) do |m| %>
+      <%=m.label "description"%>
+      <%=m.number_field :description%>
+      <%=m.label "completion_date"%>
+      <%=m.date_field :completion_date%>
+    <%end%>
+    <%=f.submit "Submit"%>
+  <%end%>
+  

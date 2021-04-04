@@ -1,0 +1,5 @@
+<%goals.each do |g|%>
+    <li><%=link_to "#{g.description}", goal_path(g) %> Projected Completion Date: <%=g.completion_date%> <%=show_books_title(g, index)%> <%= (g.reader == current_user) ? (link_to "Edit", edit_goal_path(g)) : (nil) %></li>
+  <%end%>
+
+  

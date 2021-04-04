@@ -1,0 +1,21 @@
+<h1>Show Page for Goal</h1>
+
+<p>Description: <%=@goal.description%></p>
+<p>Completion Date: <%=@goal.completion_date%></p>
+<%=link_to "Edit",  edit_goal_path(@goal)%>
+<%=button_to("Delete", @goal, method: :delete, data: { confirm: "Really?" }) %>
+
+
+<h4>Reading is fundamental. Through each book's plot ( or story line) we can learn something!</h4>
+<h4> When we search for a book to help us reach a goal, we use the book's plot/story line to determine if we can reach that our particular goal thorugh it!
+
+<br> Below are various plots, from various books, that you have chosen to help lead you to your goal!
+<br> <br> 
+Click on any plot to find the book that it belongs to!</h4>
+
+
+
+<%@goal.plots.each do |p|%>
+    <%=link_to "#{p.description}", "/books/#{p.book_id}"%>
+    
+<%end%> 

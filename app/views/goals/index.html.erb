@@ -1,0 +1,8 @@
+<h1>Search By completion date</h1>
+
+<%= form_with url: goals_path, method: :get do |f| %>
+  <%=f.month_field :completion_date %>
+  <%=f. submit"Search"%>
+<%end%>
+
+<%=render(partial: 'goals', locals: {goals: @goals, index: true})%>

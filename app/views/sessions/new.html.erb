@@ -1,0 +1,13 @@
+
+<h1>Log In</h1>
+
+<%=render(partial: "application/errors", locals: {errors: @errors})%>
+
+<%= form_for :reader do |f| %>
+<%=f.label "Email"%>
+<%=f.email_field :email%>
+<%=f.label "Password"%>
+<%=f.password_field :password %>
+
+<%=f.submit "Log In"%>
+<%end%>
